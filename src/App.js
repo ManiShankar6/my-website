@@ -1,6 +1,5 @@
 import React from 'react';
-import { FaLinkedin, FaGithub, FaEnvelope, FaHackerrank, FaLaptopCode } from 'react-icons/fa';
-import { FaHome, FaUser, FaFile, FaStar, FaTools, FaEnvelopeOpen } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaHackerrank } from 'react-icons/fa';
 import { SiSololearn, SiLeetcode } from 'react-icons/si';
 import './App.css';
 import { motion } from 'framer-motion';
@@ -17,26 +16,12 @@ function App() {
     return (
         <div className="App">
             {/* Side Navigation */}
-<div className="side-nav">
-    <button onClick={() => scrollToSection('hero')} title="Home">
-        <FaHome size={20} />
-    </button>
-    <button onClick={() => scrollToSection('about')} title="About">
-        <FaUser size={20} />
-    </button>
-    <button onClick={() => scrollToSection('resume')} title="Resume">
-        <FaFile size={20} />
-    </button>
-    <button onClick={() => scrollToSection('projects')} title="Projects">
-        <FaStar size={20} />
-    </button>
-    <button onClick={() => scrollToSection('skills')} title="Skills">
-        <FaTools size={20} />
-    </button>
-    <button onClick={() => scrollToSection('contact')} title="Contact">
-        <FaEnvelopeOpen size={20} />
-    </button>
-</div>
+            <div className="side-nav">
+                <button onClick={() => scrollToSection('about')} title="About">About</button>
+                <button onClick={() => scrollToSection('experience')} title="Experience">Experience</button>
+                <button onClick={() => scrollToSection('projects')} title="Projects">Projects</button>
+                <button onClick={() => scrollToSection('contact')} title="Contact">Contact</button>
+            </div>
 
             {/* Hero Section */}
             <header id="hero" className="hero">
@@ -49,21 +34,11 @@ function App() {
                     <h1 className="hero-title">Mani Shankar Chamidisetty</h1>
                     <Typed
                         className="hero-typed"
-                        strings={[
-                            "Data Engineer",
-                            "Data Scientist",
-                            "AI Enthusiast",
-                            "ML Developer",
-                            "Software Engineer",
-                        ]}
+                        strings={["Data Engineer", "Data Scientist", "AI Enthusiast", "ML Developer", "Software Engineer"]}
                         typeSpeed={50}
                         backSpeed={30}
                         loop
                     />
-                    <div className="hero-buttons">
-                        <button className="btn" onClick={() => scrollToSection('resume')}>View Resume</button>
-                        <button className="btn" onClick={() => scrollToSection('contact')}>Contact Me</button>
-                    </div>
                     <div className="social-icons">
                         <a href="https://linkedin.com/in/manishankar610" target="_blank" rel="noopener noreferrer" title="LinkedIn">
                             <FaLinkedin size={30} />
@@ -89,73 +64,68 @@ function App() {
 
             {/* About Section */}
             <section id="about" className="about">
-                <motion.h2
-                    initial={{ opacity: 0, y: -20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    About Me
-                </motion.h2>
-                <motion.ul
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    <li>Experienced Data Engineer skilled in designing, building, and optimizing scalable data pipelines.</li>
-                    <li>Proficient in AWS services like Redshift, Glue, RDS, IAM, and Step Functions.</li>
-                    <li>Strong foundation in ETL tools (Informatica PowerCenter) and database management (Teradata, Oracle SQL).</li>
-                    <li>Dedicated to solving complex problems with data-driven solutions and cloud expertise.</li>
-                </motion.ul>
+                <div className="about-container">
+                    <motion.img
+                        className="about-image"
+                        src="/path-to-your-profile-image.jpg"
+                        alt="Profile"
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1 }}
+                    />
+                    <motion.div
+                        className="about-text"
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1 }}
+                    >
+                        <h2>About Me</h2>
+                        <p>
+                            Experienced Data Engineer skilled in designing, building, and optimizing scalable data pipelines.
+                            Proficient in AWS services, ETL tools, and database management. Dedicated to solving complex problems
+                            with data-driven solutions.
+                        </p>
+                    </motion.div>
+                </div>
             </section>
 
-            {/* Resume Section */}
-            <section id="resume" className="resume">
-                <motion.h2
-                    initial={{ opacity: 0, y: -20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    Professional Experience
-                </motion.h2>
-                <div className="resume-content">
+            {/* Experience Section */}
+            <section id="experience" className="experience">
+                <h2>Professional Experience</h2>
+                <div className="timeline">
                     <motion.div
-                        className="resume-card"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.3 }}
+                        className="timeline-card"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1 }}
                     >
-                        <h3>Data Engineering Analyst - Accenture (Dec 2022 – Jul 2023)</h3>
+                        <h3>Data Engineering Analyst</h3>
+                        <p>Accenture (Dec 2022 – Jul 2023)</p>
                         <ul>
-                            <li>Developed reusable workflows for cloud migration, ensuring data accuracy and reducing manual effort.</li>
-                            <li>Implemented efficient data pipelines, improving data processing speed by 40%.</li>
+                            <li>Developed reusable workflows for cloud migration.</li>
+                            <li>Improved data processing speed by 40%.</li>
                         </ul>
                     </motion.div>
                     <motion.div
-                        className="resume-card"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.3 }}
+                        className="timeline-card"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 0.2 }}
                     >
-                        <h3>Data Engineering Associate - Accenture (Oct 2021 – Dec 2022)</h3>
+                        <h3>Data Engineering Associate</h3>
+                        <p>Accenture (Oct 2021 – Dec 2022)</p>
                         <ul>
-                            <li>Designed and optimized ETL pipelines using Informatica PowerCenter and SQL.</li>
-                            <li>Streamlined data ingestion processes to handle large-scale enterprise datasets.</li>
+                            <li>Designed and optimized ETL pipelines using SQL.</li>
+                            <li>Streamlined large-scale data ingestion processes.</li>
                         </ul>
                     </motion.div>
                 </div>
-                <a href="/Mani Shankar Chamidisetty_DEngineer.pdf" download>
-                    <button className="btn">Download Resume</button>
-                </a>
             </section>
 
             {/* Projects Section */}
             <section id="projects" className="projects">
-                <motion.h2
-                    initial={{ opacity: 0, y: -20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    Projects
-                </motion.h2>
-                <div className="project-content">
+                <h2>Projects</h2>
+                <div className="project-grid">
                     <motion.div
                         className="project-card"
                         whileHover={{ scale: 1.05 }}
@@ -177,13 +147,7 @@ function App() {
 
             {/* Contact Section */}
             <section id="contact" className="contact">
-                <motion.h2
-                    initial={{ opacity: 0, y: -20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    Contact Me
-                </motion.h2>
+                <h2>Contact Me</h2>
                 <form>
                     <div className="form-group">
                         <input type="text" placeholder=" " required />
@@ -207,25 +171,6 @@ function App() {
                     </motion.button>
                 </form>
             </section>
-
-            {/* Footer Section */}
-            <footer className="footer">
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 2 }}
-                >
-                    © All rights reserved by Mani Shankar Chamidisetty
-                </motion.p>
-                <motion.h2
-                    className="footer-slogan"
-                    initial={{ scale: 0.8 }}
-                    animate={{ scale: 1.2 }}
-                    transition={{ duration: 1, repeat: Infinity, repeatType: 'reverse' }}
-                >
-                    HAKUNA MATATA!
-                </motion.h2>
-            </footer>
         </div>
     );
 }
