@@ -375,7 +375,7 @@ function App() {
         <li>Google Certified Python Programmer</li>
         <li>AWS Certified Cloud Practitioner Essentials</li>
         <li>IBM Certified Data Engineer Professional</li>
-        <li>Hackerramnk Certified Gold in Problem Solving</li>
+        <li>Hackerrank Certified Gold in Problem Solving</li>
       </ul>
     </motion.div>
   </div>
